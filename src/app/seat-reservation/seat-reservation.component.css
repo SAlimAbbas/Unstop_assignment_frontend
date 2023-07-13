@@ -1,0 +1,132 @@
+.main-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.seat-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    justify-content: center;
+}
+
+.seat {
+    width: 55px;
+    height: 55px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.reserved {
+    background-color: red;
+    color: white;
+}
+
+.available {
+    background-color: green;
+    color: white;
+}
+
+.last-row {
+    width: 55px;
+}
+
+.row{
+   display: flex; 
+}
+.heading-part{
+    display: flex;
+    width: 70%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.color-box div{
+    margin-top: 10px;
+}
+.color-red{
+    padding: 5px 10px;
+   background-color: red;
+}
+.color-green {
+    padding: 5px 10px;
+    background-color:green;
+}
+.input-number{
+
+position: relative;
+display: inline-block;
+    appearance: none;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 10px;
+    width: 100px;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.input-number input[type="number"]:hover,
+.input-number input[type="number"]:focus {
+    background-color: #e1e1e1;
+}
+
+
+.outerBox{
+    margin-top: 20px;
+}
+
+.reservedBtn {
+    background-color: #0078d0;
+    border: 0;
+    border-radius: 56px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    outline: 0;
+    padding: 16px 21px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.reservedBtn:before {
+    background-color: initial;
+    background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+    border-radius: 125px;
+    content: "";
+    height: 50%;
+    left: 4%;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    transition: all .3s;
+    width: 92%;
+}
+
+.reservedBtn:hover {
+    box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .reservedBtn {
+        padding: 16px 30px;
+    }
+}
+.numSeats{
+    font-size: 22px;
+}

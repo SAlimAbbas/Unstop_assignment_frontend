@@ -1,0 +1,47 @@
+<div class="heading-part">
+  <h1>Seat-Reservation App</h1>
+  <div class="color-box">
+    <div><span class="color-red"></span>&nbsp; Booked</div>
+    <div><span class="color-green"></span>&nbsp; Available</div>
+  </div>
+</div>
+<div class="main-container">
+  <div class="seat-container">
+    <ng-container *ngFor="let row of seats; let i = index">
+      <div class="row">
+        <div
+          class="seat"
+          *ngFor="let seat of row"
+          [ngClass]="{
+            seat: true,
+            reserved: isSeatBooked(seat),
+            available: !isSeatBooked(seat),
+            'last-row': isLastRow(i)
+          }"
+        >
+          {{ seat.number }}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="outerBox">
+    <label for="numSeats" class="numSeats">Number of Seats:</label>
+    <input
+      type="number"
+      id="numSeats"
+      [(ngModel)]="numSeats"
+      class="input-number"
+      min="0"
+      max="7"
+    />
+    <button (click)="reserveSeats()" class="reservedBtn">Reserve Seats</button>
+    <button (click)="clearSeats()" class="reservedBtn">Clear All Seats</button>
+    <div *ngIf="reservedSeats && reservedSeats.length > 0">
+      <h3>Current Booked Seats:</h3>
+      <ul>
+        <li *ngFor="let seat of reservedSeats">{{ seat.number }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
