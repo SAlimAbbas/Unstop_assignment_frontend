@@ -74,6 +74,10 @@ export class SeatReservationComponent implements OnInit {
   reserveSeats() {
     if (this.numSeats > 7) {
       alert('Cannot reserve more than 7 seats at a time');
+      return;
+    } else if (this.numSeats <= 0) {
+      alert('At least reserve one seat');
+      return;
     }
     const payload = { numSeats: this.numSeats };
     return this.http
